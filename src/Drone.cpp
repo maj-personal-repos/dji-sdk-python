@@ -1,76 +1,50 @@
 #include "Drone.h"
 
-using namespace Matrice;
 
-
-Drone::Drone() {
-    
-    serialDevice = new LinuxSerialDevice(UserConfig::deviceName, UserConfig::baudRate);
-    
-    api = new CoreAPI(serialDevice);
-    
-    flight = new Flight(api);
-    
-    waypoint = new WayPoint(api);
-    
-    camera = new Camera(api);
+Matrice::Drone::Drone(std::string filename) : filename(filename) { 
 
 }
 
-
-int Drone::init() {
+int Matrice::Drone::initialize() {
 
     return 0;
 }
 
-ackReturnData Drone::takeControl() {
 
-    ackReturnData returnData;
+int Matrice::Drone::takeControl() {
 
-    return returnData;
+    return 0;
 }
 
 
-ackReturnData Drone::releaseControl() {
+int Matrice::Drone::releaseControl() {
 
-    ackReturnData returnData;
-
-    return returnData;
+    return 0;
 
 }
 
-ackReturnData Drone::arm() {
+int Matrice::Drone::arm() {
 
-    ackReturnData returnData;
-
-    return returnData;
+    return 0;
 }
 
-ackReturnData Drone::disarm() {
+int Matrice::Drone::disarm() {
 
-    ackReturnData returnData;
-
-    return returnData;
+    return 0;
 }
 
-ackReturnData Drone::takeoff() {
+int Matrice::Drone::takeoff() {
 
-    ackReturnData returnData;
-
-    return returnData;
+    return 0;
 }
 
-ackReturnData Drone::land() {
+int Matrice::Drone::land() {
     
-    ackReturnData returnData;
-
-    return returnData;
+    return 0;
 }
 
-ackReturnData Drone::goHome() {
+int Matrice::Drone::goHome() {
 
-    ackReturnData returnData;
-
-    return returnData;
+    return 0;
 
 }

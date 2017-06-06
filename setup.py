@@ -48,7 +48,7 @@ def build_osdk_libs():
 ext_modules = [
     Extension(
         'osdkpy',
-        ['src/bindings.cpp'],
+        ['src/Drone.cpp', 'src/bindings.cpp'],
         include_dirs=[
             # Path to pybind11 headers
             get_pybind_include(),
@@ -58,8 +58,9 @@ ext_modules = [
             'Onboard-SDK/osdk-wrapper/inc',
             'Onboard-SDK/platform/linux/inc'
         ],
+        #extra_compile_args=['-fPIC'],
         library_dirs=['Onboard-SDK/build/libs'],
-        libraries=['djiosdk-core', 'djiosdk-platform', 'djiosdk-wrapper'],
+        libraries=['djiosdk-platform', 'djiosdk-core', 'djiosdk-wrapper'],
         language='c++'
     ),
 ]

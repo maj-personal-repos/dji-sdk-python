@@ -1,13 +1,13 @@
-#include "LinuxSerialDevice.h"
-#include "LinuxCamera.h"
+#include <LinuxSerialDevice.h>
+#include <LinuxCamera.h>
 #include <DJI_Follow.h>
 #include <DJI_Flight.h>
 #include <DJI_Version.h>
 #include <DJI_WayPoint.h>
+#include <string>
 
-
-using namespace DJI;
 using namespace DJI::onboardSDK;
+using namespace DJI;
 
 namespace Matrice {
 
@@ -15,23 +15,25 @@ namespace Matrice {
 
         public:
 
-            Drone();
+            Drone(std::string);
 
-            int init();
+            int initialize();
 
-            ackReturnData takeControl();
+            int takeControl();
 
-            ackReturnData releaseControl();
+            int releaseControl();
 
-            ackReturnData arm();
+            int arm();
 
-            ackReturnData disarm();
+            int disarm();
 
-            ackReturnData takeoff();
+            int takeoff();
 
-            ackReturnData land();
+            int land();
 
-            ackReturnData goHome();
+            int goHome();
+
+        private:
 
             LinuxSerialDevice* serialDevice;
 
@@ -43,7 +45,8 @@ namespace Matrice {
 
             Camera* camera;
 
+            std::string filename;
+
     };
+
 }
-
-
