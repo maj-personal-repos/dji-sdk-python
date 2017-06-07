@@ -26,15 +26,15 @@ namespace Matrice {
 
             ackReturnData releaseControl();
 
-            int arm();
+            ackReturnData engage();
 
-            int disarm();
+            ackReturnData disengage();
 
-            int takeoff();
+            ackReturnData takeoff();
 
-            int land();
+            ackReturnData land();
 
-            int goHome();
+            ackReturnData returnHome();
 
         private:
 

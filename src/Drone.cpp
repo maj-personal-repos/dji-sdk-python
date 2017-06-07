@@ -1,5 +1,5 @@
 #include "Drone.h"
-
+#include "LinuxFlight.h"
 
 Matrice::Drone::Drone(std::string filename) : filename(filename) {
 
@@ -209,28 +209,28 @@ ackReturnData Matrice::Drone::releaseControl() {
     return controlAck;
 }
 
-int Matrice::Drone::arm() {
+ackReturnData Matrice::Drone::engage() {
 
-    return 0;
+    return arm(flight);
 }
 
-int Matrice::Drone::disarm() {
+ackReturnData Matrice::Drone::disengage() {
 
-    return 0;
+    return disArm(flight);
 }
 
-int Matrice::Drone::takeoff() {
+ackReturnData Matrice::Drone::takeoff() {
 
-    return 0;
+    return monitoredTakeoff(api, flight);
 }
 
-int Matrice::Drone::land() {
+ackReturnData Matrice::Drone::land() {
     
-    return 0;
+    return landing(api, flight);
 }
 
-int Matrice::Drone::goHome() {
+ackReturnData Matrice::Drone::returnHome() {
 
-    return 0;
+    return goHome(flight);
 
 }
