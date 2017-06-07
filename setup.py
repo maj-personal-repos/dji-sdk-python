@@ -36,7 +36,7 @@ def build_osdk_libs():
         print "osdk build directory present..."
         subprocess.call(['rm', '-rf', './Onboard-SDK/build/*'])
 
-    cmake_cmd = ['cmake', '..']
+    cmake_cmd = ['cmake', '-DCMAKE_POSITION_INDEPENDENT_CODE=TRUE', '..']
     build_dir = './Onboard-SDK/build'
 
     p = subprocess.Popen(cmake_cmd, cwd=build_dir)
@@ -60,7 +60,7 @@ ext_modules = [
         ],
         #extra_compile_args=['-fPIC'],
         library_dirs=['Onboard-SDK/build/libs'],
-        libraries=['djiosdk-platform', 'djiosdk-core', 'djiosdk-wrapper'],
+        libraries=['djiosdk-wrapper','djiosdk-platform', 'djiosdk-core'],
         language='c++'
     ),
 ]

@@ -7,6 +7,7 @@
 #include <string>
 
 using namespace DJI::onboardSDK;
+
 using namespace DJI;
 
 namespace Matrice {
@@ -19,9 +20,11 @@ namespace Matrice {
 
             int initialize();
 
-            int takeControl();
+            int cleanup();
 
-            int releaseControl();
+            ackReturnData takeControl();
+
+            ackReturnData releaseControl();
 
             int arm();
 
