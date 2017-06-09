@@ -20,11 +20,11 @@ namespace Matrice {
 
             int initialize();
 
-            int cleanup();
+            int shutdown();
 
-            ackReturnData takeControl();
+            ackReturnData getControl();
 
-            ackReturnData releaseControl();
+            ackReturnData relControl();
 
             ackReturnData engage();
 
@@ -47,6 +47,8 @@ namespace Matrice {
             WayPoint* waypoint;
 
             Camera* camera;
+
+            LinuxThread* read;
 
             std::string filename;
 
