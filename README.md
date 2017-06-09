@@ -1,2 +1,2 @@
-# Onboard-SDK-python
-DJI Onboard SDK python interface
+# dji-sdk-python
+DJI SDK python interface
