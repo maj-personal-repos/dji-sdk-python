@@ -1,8 +1,16 @@
 import osdkpy
+import time
 
 drone = osdkpy.Drone('UserConfig.txt')
 drone.initialize()
-print "Drone inialized from python."
-drone.cleanup()
-print "Drone cleanuped from python."
+time.sleep(1)
+drone.takeControl()
+drone.arm()
+drone.takeoff()
+time.sleep(5)
+drone.land()
+drone.disarm()
+drone.releaseControl()
+drone.shutdown()
+
 
