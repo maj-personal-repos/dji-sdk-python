@@ -36,6 +36,14 @@ namespace Matrice {
 
             ackReturnData returnHome();
 
+            int setAttitude(float32_t roll, float32_t pitch, float32_t yaw);
+
+            int setAttitudeAndAltitude(float32_t roll, float32_t pitch, float32_t yaw, float32_t z);
+
+            int setOffset(float32_t xOffset, float32_t yOffset, float32_t zOffset, float32_t yaw);
+
+            int setVelocity(float32_t xVelocity, float32_t yVelocity, float32_t zVelocity, float32_t yawRate);
+
         private:
 
             LinuxSerialDevice* serialDevice;

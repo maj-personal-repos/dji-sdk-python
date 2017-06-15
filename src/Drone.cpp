@@ -234,3 +234,23 @@ ackReturnData Matrice::Drone::returnHome() {
     return goHome(flight);
 
 }
+
+int Matrice::Drone::setAttitude(float32_t roll, float32_t pitch, float32_t yaw) {
+    
+    return attitudeControl(api, flight, roll, pitch, yaw);
+}
+
+int Matrice::Drone::setAttitudeAndAltitude(float32_t roll, float32_t pitch, float32_t yaw, float32_t z) {
+
+    return attitudeAltitudeControl(api, flight, roll, pitch, yaw, z);
+}
+
+int Matrice::Drone::setOffset(float32_t xOffset, float32_t yOffset, float32_t zOffset, float32_t yaw) {
+
+    return moveByPositionOffset(api, flight, xOffset, yOffset, zOffset, yaw);
+}
+
+int Matrice::Drone::setVelocity(float32_t xVelocity, float32_t yVelocity, float32_t zVelocity, float32_t yawRate) {
+
+    return moveWithVelocity(api, flight, xVelocity, yVelocity, zVelocity, yawRate);
+}
