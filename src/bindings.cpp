@@ -17,7 +17,11 @@ PYBIND11_MODULE(osdkpy, m) {
         .def("disarm", &Drone::disengage)
         .def("takeoff", &Drone::takeoff)
         .def("land", &Drone::land)
-        .def("returnHome", &Drone::returnHome);
+        .def("returnHome", &Drone::returnHome)
+        .def("setAttitude", &Drone::setAttitude)
+        .def("setAttitudeAndAltitude", &Drone::setAttitudeAndAltitude)
+        .def("setOffset", &Drone::setOffset)
+        .def("setVelocity", &Drone::setVelocity);
 
     py::class_<ackReturnData>(m, "ackReturnData")
         .def_readwrite("status", &ackReturnData::status)
