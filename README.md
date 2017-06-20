@@ -59,7 +59,7 @@ drone.shutdown()
 
 ## About
 
-This package was created by [Miguel Alonso Jr](http://www.drmiguelalonsojr.com). with the purpose of providing a simply python interface to DJI's drones and guidance platforms.
+This package was created by [Miguel Alonso Jr](http://www.drmiguelalonsojr.com) with the purpose of providing a simply python interface to DJI's drones and guidance platforms.
 It runs on debian linux platforms like the L4T Jetson TX1/TX2.
 
 ## License
