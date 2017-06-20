@@ -56,3 +56,14 @@ drone.disarm()
 drone.releaseControl()
 drone.shutdown()
 ```
+
+## About
+
+This package was created by [Miguel Alonso Jr](http://www.drmiguelalonsojr.com). with the purpose of providing a simply python interface to DJI's drones and guidance platforms.
+It runs on debian linux platforms like the L4T Jetson TX1/TX2.
+
+## License
+
+DJISDKPY is provided under the GNU GPL V3 that can be found in the `LICENSE` file. By using, distributing, or
+contributing to this project, you agree to the terms and conditions of this license.
+
