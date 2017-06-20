@@ -57,6 +57,13 @@ drone.releaseControl()
 drone.shutdown()
 ```
 
+## TODO
+
+* Add support for Guidance SDK
+* Update to support v3.3 of the Onboard SDK
+* Add support for RPi3 raspbian
+* Add move by position and move by velocity full support
+
 ## About
 
 This package was created by [Miguel Alonso Jr](http://www.drmiguelalonsojr.com) with the purpose of providing a simply python interface to DJI's drones and guidance platforms.
