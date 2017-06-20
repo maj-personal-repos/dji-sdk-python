@@ -1,5 +1,5 @@
 import time
-import osdkpy
+import djisdkpy
 
 user_prompt = "\n" + \
   "|------------------DJI Onboard SDK Interactive Sample------------|\n" + \
@@ -40,7 +40,7 @@ user_prompt = "\n" + \
   "|                                                                |\n" + \
   "|------------------DJI Onboard SDK Interactive Sample------------|\n"
 
-drone = osdkpy.Drone("UserCongif.txt")
+drone = djisdkpy.Drone("UserCongif.txt")
 drone.initialize()
 
 class _Getch:

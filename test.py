@@ -1,7 +1,7 @@
-import osdkpy
+import djisdkpy
 import time
 
-drone = osdkpy.Drone('UserConfig.txt')
+drone = djisdkpy.Drone('UserConfig.txt')
 drone.initialize()
 time.sleep(1)
 drone.takeControl()

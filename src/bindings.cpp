@@ -6,7 +6,7 @@ using namespace Matrice;
 
 namespace py = pybind11;
 
-PYBIND11_MODULE(osdkpy, m) {
+PYBIND11_MODULE(djisdkpy, m) {
     py::class_<Drone>(m, "Drone")
         .def(py::init<std::string>())
         .def("initialize", &Drone::initialize)

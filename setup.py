@@ -27,7 +27,7 @@ class get_pybind_include(object):
 
 def build_osdk_libs():
 
-    print 'building osdk library...'
+    print 'building onboard sdk library...'
 
     if not os.path.isdir('./Onboard-SDK/build'):
         print 'creating build directory...'
@@ -47,7 +47,7 @@ def build_osdk_libs():
 
 ext_modules = [
     Extension(
-        'osdkpy',
+        'djisdkpy',
         ['src/Drone.cpp', 'src/bindings.cpp'],
         include_dirs=[
             # Path to pybind11 headers
@@ -121,12 +121,12 @@ class BuildExt(build_ext):
         build_ext.build_extensions(self)
 
 setup(
-    name='osdkpy',
+    name='djisdkpy',
     version=__version__,
     author='Miguel Alonso Jr',
     author_email='drmiguelalonsojr@gmail.com',
     url='https://github.com/drmaj/Onboard-SDK-python',
-    description='Python module with bindings for the DJI Onboard-SDK',
+    description='Python module with bindings for the DJI SDKs',
     long_description='',
     ext_modules=ext_modules,
     install_requires=['pybind11>=1.7'],
