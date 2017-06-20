@@ -30,6 +30,7 @@ user_prompt = "\n" + \
   "| [l] Take Picture                                               |\n" + \
   "| [m] Take Video                                                 |\n" + \
   "| [n] Exit this sample                                           |\n" + \
+  "| [o] Keyboard move                                              |\n" + \
   "|                                                                |\n" + \
   "| Type one of these letters and then press the enter key.        |\n" + \
   "|                                                                |\n" + \
@@ -41,6 +42,44 @@ user_prompt = "\n" + \
 
 drone = osdkpy.Drone("UserCongif.txt")
 drone.initialize()
+
+class _Getch:
+    def __init__(self):
+        self.impl = _GetchUnix()
+
+    def __call__(self):
+        return self.impl()
+
+
+class _GetchUnix:
+    def __init__(self):
+        import tty, sys, termios
+
+    def __call__(self):
+        import sys, tty, termios
+        fd = sys.stdin.fileno()
+        old_settings = termios.tcgetattr(fd)
+        try:
+            tty.setraw(sys.stdin.fileno())
+            ch = sys.stdin.read(1)
+        finally:
+            termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+        return ch
+
+def move_drone_via_keyboard():
+
+    try:
+        user_input = _Getch()
+        while True:
+            uin = user_input()
+            if uin == ' ':
+                break
+            elif uin == 'i':
+                drone.setVelocity(1.0, 0.0, 0.0, 0.0)
+            else:
+                drone.setVelocity(0.0, 0.0, 0.0, 0.0)
+    except KeyboardInterrupt:
+        pass
 
 def check_input(user_input):
     output = True
@@ -60,6 +99,8 @@ def check_input(user_input):
         drone.returnHome()
     elif user_input == 'n':
         output = False
+    elif user_input == 'o':
+        move_drone_via_keyboard()
     else:
         print "Please select a valid option."
 

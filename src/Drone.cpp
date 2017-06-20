@@ -120,5 +120,5 @@ int Matrice::Drone::setOffset(float32_t xOffset, float32_t yOffset, float32_t zO
 
 int Matrice::Drone::setVelocity(float32_t xVelocity, float32_t yVelocity, float32_t zVelocity, float32_t yawRate) {
 
-    return moveWithVelocity(api, flight, xVelocity, yVelocity, zVelocity, yawRate);
+    return moveWithVelocity(api, flight, xVelocity, yVelocity, zVelocity, yawRate, 10);
 }
