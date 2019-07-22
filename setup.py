@@ -27,13 +27,13 @@ class get_pybind_include(object):
 
 def build_osdk_libs():
 
-    print 'building onboard sdk library...'
+    print('building onboard sdk library...')
 
     if not os.path.isdir('./Onboard-SDK/build'):
-        print 'creating build directory...'
+        print('creating build directory...')
         subprocess.call(['mkdir','-p', './Onboard-SDK/build'])
     else:
-        print "osdk build directory present..."
+        print("osdk build directory present...")
         subprocess.call(['rm', '-rf', './Onboard-SDK/build/*'])
 
     cmake_cmd = ['cmake', '-DCMAKE_POSITION_INDEPENDENT_CODE=TRUE', '..']

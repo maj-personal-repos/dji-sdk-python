@@ -102,7 +102,7 @@ def check_input(user_input):
     elif user_input == 'o':
         move_drone_via_keyboard()
     else:
-        print "Please select a valid option."
+        print("Please select a valid option.")
 
     time.sleep(0.5)
     return output
@@ -110,9 +110,9 @@ def check_input(user_input):
 if __name__ == '__main__':
 
     try:
-        user_input = raw_input(user_prompt)
+        user_input = input(user_prompt)
         while check_input(user_input):
-            user_input = raw_input(user_prompt)
+            user_input = input(user_prompt)
     except KeyboardInterrupt:
         pass
 
